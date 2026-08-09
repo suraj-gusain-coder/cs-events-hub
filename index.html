@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daksh | Indian CS Events & Internships Hub</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Aggregated tech events, hackathons, coding contests, and internships across India and internationally for computer science students.">
+  <meta name="keywords" content="CS Events, Indian Hackathons, SIH 2026, ICPC India, CS Internships Bangalore, Coding Contests, CTF India">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- Dynamic Cyber Background -->
+  <div class="bg-glow-1"></div>
+  <div class="bg-glow-2"></div>
+  <div class="bg-grid"></div>
+
+  <!-- Header / Navigation -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="logo-text">
+          <h1>Daksh</h1>
+          <span>CS Opportunities Hub</span>
+        </div>
+      </div>
+      
+      <!-- Live Stats Ticker -->
+      <div class="stats-container">
+        <div class="stat-badge">
+          <span class="stat-num" id="stat-active-events">0</span>
+          <span class="stat-label">Active Events</span>
+        </div>
+        <div class="stat-badge">
+          <span class="stat-num" id="stat-active-internships">0</span>
+          <span class="stat-label">Internships</span>
+        </div>
+        <div class="stat-badge urgent">
+          <span class="stat-icon"><i class="fa-solid fa-clock"></i></span>
+          <span class="stat-label" id="stat-urgent-deadline">SIH Reg. Closing!</span>
+        </div>
+      </div>
+
+      <button id="open-modal-btn" class="btn btn-primary add-btn">
+        <i class="fa-solid fa-plus"></i> Suggest Opportunity
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h2>Never Miss a Tech Opportunity Again</h2>
+      <p>Curated hackathons, competitive programming contests, CTFs, and internships across Indian cities & globally.</p>
+    </div>
+  </section>
+
+  <!-- Main Dashboard Container -->
+  <main class="dashboard">
+    
+    <!-- Filter & Toolbar Section -->
+    <div class="toolbar">
+      
+      <!-- Tabbed Categories -->
+      <div class="category-tabs" id="category-tabs">
+        <button class="tab-btn active" data-category="all">
+          <i class="fa-solid fa-globe"></i> All
+        </button>
+        <button class="tab-btn" data-category="hackathons">
+          <i class="fa-solid fa-laptop-code"></i> Hackathons
+        </button>
+        <button class="tab-btn" data-category="contests">
+          <i class="fa-solid fa-code"></i> Coding Contests
+        </button>
+        <button class="tab-btn" data-category="ctf">
+          <i class="fa-solid fa-flag"></i> CTFs & Ideathons
+        </button>
+        <button class="tab-btn" data-category="internships">
+          <i class="fa-solid fa-briefcase"></i> Internships (India)
+        </button>
+        <button class="tab-btn" data-category="international">
+          <i class="fa-solid fa-earth-americas"></i> International
+        </button>
+      </div>
+
+      <!-- Search and Dropdowns -->
+      <div class="filter-controls">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Search by name, company, tags...">
+        </div>
+
+        <div class="select-wrapper location-filter-container">
+          <i class="fa-solid fa-location-dot"></i>
+          <select id="location-select">
+            <option value="all">All Locations (India & Global)</option>
+            <option value="online">Online / Remote</option>
+            <option value="bangalore">Bengaluru (Bangalore)</option>
+            <option value="hyderabad">Hyderabad</option>
+            <option value="pune">Pune</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="noida-gurgaon">Delhi NCR (Noida/Gurgaon)</option>
+            <option value="other-india">Other Indian Cities</option>
+          </select>
+        </div>
+
+        <div class="select-wrapper">
+          <i class="fa-solid fa-arrow-down-wide-short"></i>
+          <select id="sort-select">
+            <option value="deadline">Closes Soonest</option>
+            <option value="newest">Recently Added</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Active Filter Chips -->
+    <div class="active-chips" id="active-chips-container">
+      <!-- Generated dynamically -->
+    </div>
+
+    <!-- Opportunity Grid -->
+    <div class="opportunity-grid" id="opportunity-grid">
+      <!-- Opportunity Cards Generated dynamically via JS -->
+      <div class="loader">
+        <div class="spinner"></div>
+        <p>Loading opportunities...</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Create/Suggest Opportunity Modal -->
+  <div class="modal-overlay" id="suggest-modal">
+    <div class="modal-content glass-card">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-bullhorn text-gradient"></i> Suggest Tech Opportunity</h3>
+        <button class="close-modal-btn" id="close-modal-btn">&times;</button>
+      </div>
+      
+      <form id="suggest-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="opp-title">Opportunity/Event Name <span class="required">*</span></label>
+            <input type="text" id="opp-title" required placeholder="e.g., Smart India Hackathon 2026">
+          </div>
+          
+          <div class="form-group">
+            <label for="opp-organizer">Organizer/Company <span class="required">*</span></label>
+            <input type="text" id="opp-organizer" required placeholder="e.g., AICTE, Google, Microsoft">
+          </div>
+
+          <div class="form-group">
+            <label for="opp-category">Opportunity Type <span class="required">*</span></label>
+            <select id="opp-category" required>
+              <option value="hackathons">Hackathon</option>
+              <option value="contests">Coding Contest</option>
+              <option value="ctf">CTF / Ideathon</option>
+              <option value="internships">Internship (India)</option>
+              <option value="international">International / Global Opportunity</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="opp-location-type">Mode / Location <span class="required">*</span></label>
+            <select id="opp-location-type" required>
+              <option value="online">Online / Remote</option>
+              <option value="bangalore">Bengaluru (Bangalore)</option>
+              <option value="hyderabad">Hyderabad</option>
+              <option value="pune">Pune</option>
+              <option value="mumbai">Mumbai</option>
+              <option value="noida-gurgaon">Delhi NCR (Noida/Gurgaon)</option>
+              <option value="other-india">Other Indian City</option>
+              <option value="international">International (Outside India)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="opp-deadline">Registration Deadline <span class="required">*</span></label>
+            <input type="datetime-local" id="opp-deadline" required>
+          </div>
+
+          <div class="form-group">
+            <label for="opp-link">Official Registration URL <span class="required">*</span></label>
+            <input type="url" id="opp-link" required placeholder="https://example.com/register">
+          </div>
+
+          <div class="form-group full-width">
+            <label for="opp-tags">Skills / Tags (comma separated)</label>
+            <input type="text" id="opp-tags" placeholder="e.g., Python, Competitive Programming, Security, Web Dev">
+          </div>
+
+          <div class="form-group full-width">
+            <label for="opp-desc">Description & Perks <span class="required">*</span></label>
+            <textarea id="opp-desc" rows="3" required placeholder="Describe the event, prizes, salary/stipend, eligibility, etc."></textarea>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" id="cancel-modal-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Submit Opportunity</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2026 Daksh CS Opportunities Hub. Built for Indian Developers.</p>
+      <div class="footer-links">
+        <a href="https://sih.gov.in" target="_blank"><i class="fa-solid fa-graduation-cap"></i> Smart India Hackathon</a>
+        <a href="https://icpc.global" target="_blank"><i class="fa-solid fa-trophy"></i> ICPC Global</a>
+        <a href="https://codeforces.com" target="_blank"><i class="fa-solid fa-chart-line"></i> Codeforces</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Javascript Link -->
+  <script src="app.js"></script>
+</body>
+</html>
