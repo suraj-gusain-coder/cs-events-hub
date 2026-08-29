@@ -6,7 +6,7 @@
     "category": "hackathons",
     "location": "bangalore",
     "locationLabel": "Bengaluru (AWS Office)",
-    "deadline": "2026-09-09T23:59:00",
+    "deadline": "2026-09-10T23:59:00",
     "link": "https://hack2skill.com/hackathons",
     "tags": [
       "Cloud computing",
@@ -23,7 +23,7 @@
     "category": "hackathons",
     "location": "mumbai",
     "locationLabel": "Mumbai (In-Person Finals)",
-    "deadline": "2026-09-11T23:59:00",
+    "deadline": "2026-09-12T23:59:00",
     "link": "https://hack2skill.com/hackathons",
     "tags": [
       "Fintech",
@@ -40,7 +40,7 @@
     "category": "hackathons",
     "location": "bangalore",
     "locationLabel": "KTPO Bengaluru",
-    "deadline": "2026-09-22T18:00:00",
+    "deadline": "2026-09-23T18:00:00",
     "link": "https://ethindia.co",
     "tags": [
       "Ethereum",
@@ -57,7 +57,7 @@
     "category": "hackathons",
     "location": "online",
     "locationLabel": "Online / Global",
-    "deadline": "2026-09-19T23:59:00",
+    "deadline": "2026-09-20T23:59:00",
     "link": "https://devfolio.co/hackathons",
     "tags": [
       "Web3",
@@ -73,7 +73,7 @@
     "category": "ctf",
     "location": "mumbai",
     "locationLabel": "Mumbai / Remote",
-    "deadline": "2026-09-05T23:59:00",
+    "deadline": "2026-09-06T23:59:00",
     "link": "https://unstop.com/all-opportunities?opportunity=hackathons",
     "tags": [
       "Ideathon",
@@ -89,7 +89,7 @@
     "category": "contests",
     "location": "online",
     "locationLabel": "Online (India)",
-    "deadline": "2026-09-04T23:59:00",
+    "deadline": "2026-09-05T23:59:00",
     "link": "https://unstop.com/coding-challenges",
     "tags": [
       "Competitive Coding",
@@ -105,7 +105,7 @@
     "category": "international",
     "location": "online",
     "locationLabel": "Global / Remote",
-    "deadline": "2026-09-15T23:59:00",
+    "deadline": "2026-09-16T23:59:00",
     "link": "https://devpost.com/hackathons",
     "tags": [
       "Generative AI",
@@ -121,7 +121,7 @@
     "category": "international",
     "location": "online",
     "locationLabel": "Online / Global",
-    "deadline": "2026-09-12T23:59:00",
+    "deadline": "2026-09-13T23:59:00",
     "link": "https://mlh.io/seasons/2026/events",
     "tags": [
       "Hackathon",
@@ -137,7 +137,7 @@
     "category": "contests",
     "location": "online",
     "locationLabel": "GeeksforGeeks Platform",
-    "deadline": "2026-09-01T19:00:00",
+    "deadline": "2026-09-02T19:00:00",
     "link": "https://practice.geeksforgeeks.org/events",
     "tags": [
       "DSA",
@@ -153,7 +153,7 @@
     "category": "international",
     "location": "online",
     "locationLabel": "Kaggle Platform",
-    "deadline": "2026-10-12T23:59:00",
+    "deadline": "2026-10-13T23:59:00",
     "link": "https://www.kaggle.com/competitions/titanic",
     "tags": [
       "Machine Learning",
@@ -169,7 +169,7 @@
     "category": "internships",
     "location": "bangalore",
     "locationLabel": "Bengaluru, Karnataka (In-Office)",
-    "deadline": "2026-09-03T23:59:00",
+    "deadline": "2026-09-04T23:59:00",
     "link": "https://internshala.com/internships/web-development-internship/",
     "tags": [
       "React Node",
@@ -186,7 +186,7 @@
     "category": "internships",
     "location": "hyderabad",
     "locationLabel": "Hyderabad, Telangana (In-Office)",
-    "deadline": "2026-09-06T23:59:00",
+    "deadline": "2026-09-07T23:59:00",
     "link": "https://internshala.com/internships/python-django-internship/",
     "tags": [
       "Python",
@@ -203,7 +203,7 @@
     "category": "internships",
     "location": "noida-gurgaon",
     "locationLabel": "Noida, Sector 136 (Office)",
-    "deadline": "2026-09-11T23:59:00",
+    "deadline": "2026-09-12T23:59:00",
     "link": "https://practice.geeksforgeeks.org/jobs",
     "tags": [
       "React Native",
@@ -220,7 +220,7 @@
     "category": "internships",
     "location": "online",
     "locationLabel": "Remote (India)",
-    "deadline": "2026-09-02T23:59:00",
+    "deadline": "2026-09-03T23:59:00",
     "link": "https://internshala.com/internships/work-from-home-computer-science-internships/",
     "tags": [
       "Django",
